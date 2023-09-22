@@ -43,7 +43,7 @@ class _ShopPageState extends State<ShopPage> {
           ),
         ),
         const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.0),
+          padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -72,6 +72,12 @@ class _ShopPageState extends State<ShopPage> {
             return ShoeTile(shoe: shoe);
           },
         )),
+        const Padding(
+          padding: EdgeInsets.only(top: 20.0),
+          child: Divider(
+            color: Colors.transparent,
+          ),
+        )
       ],
     );
   }
