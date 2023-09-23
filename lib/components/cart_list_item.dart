@@ -3,6 +3,7 @@ import 'package:nikeshop/models/cart.dart';
 import 'package:nikeshop/models/shoe.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class CartListItem extends StatefulWidget {
   Shoe shoe;
   CartListItem({super.key, required this.shoe});
