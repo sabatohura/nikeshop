@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nikeshop/data/shoes.dart';
 import 'package:nikeshop/models/cart.dart';
 import 'package:provider/provider.dart';
 
@@ -70,9 +69,9 @@ class _ShopPageState extends State<ShopPage> {
           Expanded(
               child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: shoes.length,
+            itemCount: value.getShoeList().length,
             itemBuilder: (context, index) {
-              Shoe shoe = shoes[index];
+              Shoe shoe = value.getShoeList()[index];
               return ShoeTile(shoe: shoe);
             },
           )),
