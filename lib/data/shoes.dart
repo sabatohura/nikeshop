@@ -17,8 +17,8 @@ List<Shoe> shoes = [
       imagePath: 'lib/images/kd.png',
       description: 'this is a dream shoes'),
   Shoe(
-      name: 'Vans',
-      price: '230',
-      imagePath: 'lib/images/vans.png',
+      name: 'Air KD',
+      price: '300',
+      imagePath: 'lib/images/kdj.png',
       description: 'this is a dream shoes'),
 ];

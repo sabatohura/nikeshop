@@ -16,7 +16,7 @@ class ShoeTile extends StatelessWidget {
             color: Colors.grey[100], borderRadius: BorderRadius.circular(12)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
@@ -30,9 +30,13 @@ class ShoeTile extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Text(
-                shoe.description,
-                style: TextStyle(color: Colors.grey[600]),
+              child: Row(
+                children: [
+                  Text(
+                    shoe.description,
+                    style: TextStyle(color: Colors.grey[600]),
+                  ),
+                ],
               ),
             ),
             Padding(
