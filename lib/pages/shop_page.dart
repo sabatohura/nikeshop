@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nikeshop/components/dialog_box.dart';
 import 'package:nikeshop/models/cart.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +14,16 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
+  void addShoeCart(Shoe shoe) {
+    Provider.of<Cart>(context, listen: false).addItemToCart(shoe);
+    showDialog(
+      context: context,
+      builder: (context) => const MyDialogBox(
+          dialogTitle: "Cart Update",
+          dialogContent: "Item Added to cart Successful"),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
@@ -72,7 +83,10 @@ class _ShopPageState extends State<ShopPage> {
             itemCount: value.getShoeList().length,
             itemBuilder: (context, index) {
               Shoe shoe = value.getShoeList()[index];
-              return ShoeTile(shoe: shoe);
+              return ShoeTile(
+                shoe: shoe,
+                onTap: () => addShoeCart(shoe),
+              );
             },
           )),
           const Padding(
