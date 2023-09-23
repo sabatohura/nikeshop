@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nikeshop/models/cart.dart';
+import 'package:provider/provider.dart';
 
 import 'pages/home_page.dart';
 import 'pages/intro_page.dart';
@@ -12,12 +14,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const IntroPage(),
-      routes: {
-        '/home': (context) => const HomePage(),
-      },
+    return ChangeNotifierProvider(
+      create: (context) => Cart(),
+      builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: const IntroPage(),
+        routes: {
+          '/home': (context) => const HomePage(),
+        },
+      ),
     );
   }
 }
